@@ -1,0 +1,9 @@
+/build
+/html
+/nbproject
+/.project
+/.cproject
+/.settings
+include/
+pbrpc/
+xtreemfs/
