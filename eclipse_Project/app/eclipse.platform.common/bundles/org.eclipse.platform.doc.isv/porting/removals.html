@@ -1,0 +1,730 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<head>
+<meta name="copyright" content="Copyright (c) IBM Corporation and others 2011, 2020. This page is made available under license. For full details see the LEGAL in the documentation book that contains this page." >
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="STYLESHEET" href="../book.css" charset="ISO-8859-1" type="text/css">
+<title>Deprecated API removals</title>
+</head>
+<body>
+<h1>Deprecated API removals</h1>
+
+<p>
+  Deprecated API can be marked for deletion.
+  See the <a href="http://wiki.eclipse.org/Eclipse/API_Central/Deprecation_Policy">policy</a> for the details.
+  This section describes API removals that occurred in past releases, and upcoming removals in future releases.
+</p>
+
+
+<h2>Overview of removed API</h2>
+
+<p>
+Removed APIs in the Neon (4.6) release:
+</p>
+<ol>
+ <li><a href="#runtime">Eclipse 2.0 runtime model and boot API</a></li>
+</ol>
+<p>
+Removed APIs in the Oxygen (4.7) release:
+</p>
+<ol>
+ <li><a href="#listenerlist">org.eclipse.jface.util.ListenerList</a></li>
+</ol>
+
+<p>
+Removed APIs in the Photon (4.8) release:
+</p>
+<ol>
+ <li><a href="#updatemanager">Update manager</a></li>
+ <li><a href="#platform-methods">Platform methods</a></li>
+ <li><a href="#tasklist">org.eclipse.ui.views.tasklist.TaskList</a></li>
+  <li><a href="#icontextcomputer">IContextComputer</a></li>
+</ol>
+
+<p>
+Removed APIs in the Eclipse 4.10 release:
+</p>
+<ol>
+ <li><a href="#tabletreeviewer">TableTree and TableTreeViewer</a></li>
+</ol>
+
+
+<p>
+Removed APIs in the Eclipse 4.11 release:
+</p>
+<ol>
+ <li><a href="#imageandmessagearea">ImageAndMessageArea from JFace</a></li>
+</ol>
+
+<p>
+Removed APIs in the Eclipse 4.12 release:
+</p>
+<ol>
+ <li><a href="#iplugindescriptor">IPluginDescriptor</a></li>
+ <li><a href="#tabletree">TableTree</a></li>
+</ol>
+
+<p>
+Removed APIs in the Eclipse 4.17 release:
+</p>
+<ol>
+ <li><a href="#minputpart">Remove Input and MInputPart</a></li>
+ <li><a href="#platform-getjobmanager">org.eclipse.core.runtime.Platform#getJobManager()</a></li>
+  <li><a href="#jfaceassert">JFace and JFace text Assert</a></li>
+</ol>
+
+<p>
+Removed APIs in the Eclipse 4.20 release:
+</p>
+<ol>
+ <li><a href="#jobcreateSystem">Delete Job.createSystem(ICoreRunnable) API </a></li>
+ <li><a href="#iplatformrunnable">Remove org.eclipse.core.runtime.IPlatformRunnable</a></li>
+ <li><a href="#targetProvisioners">Remove org.eclipse.pde.ui.targetProvisioners extension point</a></li>
+  <li><a href="#20supportclasses">Delete 2.0 plug-in compatibility classes and related API</a></li>
+</ol>
+
+
+
+<h2>Overview of planned API removals</h2>
+
+<p>
+Planned API removals after June 2017:
+</p>
+<ol>
+
+ <li><a href="#auth">Platform authorization API</a></li>
+</ol>
+
+<p>
+Planned API removals after June 2018:
+</p>
+<ol>
+ <li><a href="#fullscreen">org.eclipse.ui.cocoa.fullscreenWindow</a></li>
+</ol>
+
+<p>
+Planned API removals after June 2020:
+</p>
+<ol>
+ <li><a href="#mpartdescriptor">Remove Dirtable flag from MPartDescriptor</a></li>
+ <li><a href="#ui-dialogs">Remove deprecated dialogs from org.eclipse.ui.dialogs</a></li>
+ <li><a href="#jface-popupdialog">Remove deprecated method and constructor in PopupDialog</a></li>
+</ol>
+
+<p>
+Planned API removals after March 2021:
+</p>
+<ol>
+ <li><a href="#commandsutil">org.eclipse.core.commands.util package</a></li>
+ <li><a href="#encodingactiongroup">org.eclipse.ui.editors.text.EncodingActionGroup</a></li>
+ <li><a href="#equinoxlauncher">org.eclipse.core.launcher#Main and WebStartMain</a></li>
+ <li><a href="#workbenchwindowconfigurer">Delete unsupported methods in WorkbenchWindowConfigurer </a></li>
+</ol>
+
+<p>
+Planned API removals after June 2021:
+</p>
+<ol>
+ <li><a href="#commands">Delete deprecated contents of org.eclipse.ui.commands package</a></li>
+</ol>
+
+<p>
+Planned API removals after September 2021:
+</p>
+<ol>
+ <li><a href="#navigator">Navigator view and related API</a></li>
+</ol>
+
+<p>
+Planned API removals after December 2021:
+</p>
+<ol>
+ <li><a href="#bookmark">Bookmark view and related API</a></li>
+</ol>
+
+<p>
+Planned API removals after June 2022:
+</p>
+<ol>
+ <li><a href="#icu4j">ICU4J bundle from SDK</a></li>
+</ol>
+
+<p>
+Planned API removals after September 2022:
+</p>
+<ol>
+ <li><a href="#pde.ui.launcher">Remove deprecated contents of org.eclipse.pde.ui.launcher package</a></li>
+ <li><a href="#createPlatformConfiguration">Remove TargetPlatform::createPlatformConfiguration</a></li>
+</ol>
+
+<p>
+Planned API removals after March 2023:
+</p>
+<ol>
+ <li><a href="#MultiPageEditor">MultiPageEditor</a></li>
+ <li><a href="#pack200">Pack200</a></li>
+</ol>
+
+<p>
+Planned API removals after September 2023:
+</p>
+<ol>
+ <li><a href="#ClassicSearch">Classic Search API</a></li>
+</ol>
+
+
+
+<hr>
+<!-- ############################################## -->
+
+<h2>API removals in the Eclipse 4.6 release</h2>
+
+<h3>1. <a name="runtime">Eclipse 2.0 runtime model and boot API</a></h3>
+<p>
+When the Eclipse runtime transitioned to use OSGi as its implementation, some existing
+APIs for interacting with the old runtime were deprecated and moved to a compatibility fragment
+(<tt>org.eclipse.core.runtime.compatibility</tt>). All API that was still valid was moved
+elsewhere. These APIs have been non-functional since Eclipse 3.0 and will therefore
+be removed in the future. The following packages will be removed:
+</p>
+<ul>
+ <li><tt>org.eclipse.core.boot</tt></li>
+ <li><tt>org.eclipse.core.runtime.model</tt></li>
+ </ul>
+ The compatibility fragment, <tt>org.eclipse.core.runtime.compatibility</tt> will
+ also be removed. As a consequence <code>org.eclipse.ui.startup</code> extensions will no longer work if they do not specify a class that implements <code> org.eclipse.ui.IStartup</code>.
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=370248" target="_blank">bug 370248</a>.
+</p>
+
+<h2>API removals in the Eclipse 4.7 release</h2>
+
+<h3>1. <a name="listenerlist">org.eclipse.jface.util.ListenerList</a></h3>
+<p>
+The <code>org.eclipse.jface.util.ListenerList</code> class is deprecated since 2005 and has been replaced by <code>org.eclipse.core.runtime.ListenerList with org.eclipse.core.runtime.ListenerList.IDENTITY</code> as argument.
+The <code>org.eclipse.jface.util.ListenerList</code> class is planned to get deleted.
+</p>
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=436448" target="_blank">bug 436448</a>.
+</p>
+
+
+<!-- ############################################## -->
+
+<h2>API removals in the Eclipse 4.8 release</h2>
+
+<h3>1. <a name="updatemanager">Update Manager</a></h3>
+<p>
+Bundle org.eclipse.update.core from the old update manager API was removed.
+This API was marked for deletion in the 4.2. release via <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=311590" target="_blank">bug 311590</a>.
+</p>
+
+ <h3>2. <a name="platform-methods">Methods in Platform deleted</a></h3>
+<p>
+
+Platform API as announced for Eclipse 4.2 was deleted.
+This API was marked for deletion in the 4.2. release via <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=476404" target="_blank">bug 476404</a>.
+The following methods are removed:
+</p>
+<ul>
+ <li><tt>Platform#addAuthorizationInfo</tt></li>
+ <li><tt>Platform#getAuthorizationInfo</tt></li>
+ <li><tt>Platform#flushAuthorizationInfo</tt></li>
+ <li><tt>Platform#addProtectionSpace</tt></li>
+ <li><tt>Platform#getProtectionSpace </tt></li>
+ </ul>
+
+<h3>3. <a name="tasklist">org.eclipse.ui.views.tasklist.TaskList</a></h3>
+<p>
+The <code>org.eclipse.ui.views.tasklist.TaskList</code> class is deprecated since Eclipse 3.4 and has been replaced by <code>MarkerSupportView</code>.
+The <code>org.eclipse.ui.views.tasklist.TaskList</code> class and related classes only used by this class are planned to get deleted.
+</p>
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=436506" target="_blank">bug 436506</a>.
+</p>
+
+<h3>4. <a name="icontextcomputer">IContextComputer and related classes</a></h3>
+<p>
+The <code>org.eclipse.ui.help.IContextComputer</code> class and dependent classes, i.e., org.eclipse.ui.help.WorkbenchHelp, DialogPageContextComputer and ViewContextComputer have been deleted. They were deprecated since 2002.
+</p>
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=442961" target="_blank">bug 442961</a>.
+</p>
+
+<!-- ############################################## -->
+
+<h2>API removals in the Eclipse 4.10 release</h2>
+
+ <h3>1. <a name="tabletreeviewer">TableTreeViewer</a></h3>
+<p>
+The <code>org.eclipse.jface.viewers.TableTreeViewer</code> class is deprecated since Eclipse 3.1 and has been replaced by <code>TreeViewer</code>.
+</p>
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=540481" target="_blank">bug 436505</a>.
+</p>
+
+
+<!-- ############################################## -->
+
+<h2>API removals in the Eclipse 4.11 release</h2>
+
+ <h3>1. <a name="imageandmessagearea">ImageAndMessageArea from JFace</a></h3>
+<p>
+The <code>org.eclipse.jface.dialogs.ImageAndMessageArea</code> class has been removed.
+</p>
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=475863" target="_blank">bug 475863</a>.
+</p>
+
+
+
+<!-- ############################################## -->
+
+<h2>API removals in the Eclipse 4.12 release</h2>
+
+ <h3>1. <a name="iplugindescriptor">Delete IPluginDescriptor and related API</a></h3>
+<p>
+The <code>IPluginDescriptor</code> class has been removed.
+</p>
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=475944" target="_blank">bug 475944</a>.
+</p>
+
+<h3>2. <a name="tabletree">TableTree</a></h3>
+<p>
+The <code>org.eclipse.swt.custom.TableTree</code> and <code>org.eclipse.swt.custom.TableTreeItem</code> classes have been deleted as well as methods using these types.
+</p>
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=475833" target="_blank">bug 475833</a>.
+</p>
+
+
+<!-- ############################################## -->
+<h2>API removals in the Eclipse 4.17 release</h2>
+
+<h3>2. <a name="minputpart">Remove Input and MInputPart</a></h3>
+<p>
+The <code>MInput</code> and <code>MInputPart</code> classes and related API are removed.
+</p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=562813" target="_blank">bug 562813</a>.
+
+<p>
+
+<h3>6. <a name="platform-getjobmanager">Remove method org.eclipse.core.runtime.Platform#getJobManager()</a></h3>
+
+The method <code>getJobManager()</code> is planned to be removed from class <code>org.eclipse.core.runtime.Platform</code>.
+Clients are encouraged to use the method <code>org.eclipse.core.runtime.jobs.Job#getJobManager()</code> instead.
+
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=564893" target="_blank">bug 564893</a>.
+</p>
+
+
+
+<h3>1. <a name="jfaceassert"> org.eclipse.jface.util.Assert and org.eclipse.jface.text.Assert </a></h3>
+<p>
+The <code>org.eclipse.jface.util.Assert</code> and <code>org.eclipse.jface.text.Assert</code> classes are removed.
+</p>
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=564891" target="_blank">bug 564891</a>.
+</p>
+
+
+
+<!-- ############################################## -->
+
+<!-- ############################################## -->
+<h2>API removals in the Eclipse 4.19 release</h2>
+
+<h3>1. <a name="imodelprovider">org.eclipse.pde.core.IModelProvider</a></h3>
+
+The <code>org.eclipse.pde.core.IModelProvider</code> interface has been removed in 4.19.
+
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=541068" target="_blank">bug 541068</a>.
+</p>
+
+
+<!-- ############################################## -->
+<h2>API removals in the Eclipse 4.20 release</h2>
+
+<h3><a name="jobcreateSystem">Delete Job.createSystem(ICoreRunnable) API</a></h3>
+
+The <code>Job#createSystem(ICoreRunnable)</code> will be deleted.  Use <code>JobcreateSystem(String, ICoreRunnable)</code> instead.
+
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=531968" target="_blank">bug 531968</a>.
+</p>
+
+
+<h3><a name="iplatformrunnable">org.eclipse.core.runtime.IPlatformRunnable</a></h3>
+<p>
+The <code>org.eclipse.core.runtime.IPlatformRunnable</code> interface is planned to be removed.
+</p>
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=457134" target="_blank">bug 457134</a>.
+</p>
+
+
+<h3><a name="targetProvisioners">Remove org.eclipse.pde.ui.targetProvisioners extension point</a></h3>
+
+The <code>org.eclipse.pde.ui.targetProvisioners</code> extension point is planned to be removed.
+
+Clients should use the <code>org.eclipse.pde.ui.targetLocationProvisioners</code> extension point instead.
+
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=541806" target="_blank">bug 541806</a>.
+</p>
+
+<h3>4. <a name="20supportclasses">Delete 2.0 plug-in compatibility classes and related API</a></h3>
+
+The following classes and its related API will be deleted.
+
+<ul>
+ <li><tt>ILibrary</tt></li>
+ <li><tt>IPluginPrerequisite</tt></li>
+ <li><tt>IPluginRegistry</tt></li>
+</ul>
+
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=544339" target="_blank">bug 544339</a>.
+</p>
+
+
+
+
+<!-- ############################################## -->
+
+<h2>API removals after June 2017</h2>
+
+
+<h3>1. <a name="auth">Platform authorization API</a></h3>
+<p>
+Since Eclipse 1.0, the Eclipse Platform class provided API for storing and retrieving
+passwords in a keyring file. This API used an inherently insecure method for encrypting
+credentials, and used a custom encryption algorithm that made it difficult for some
+consumers to distribute and export Eclipse-based products. For these and other reasons,
+this API was deprecated and replaced in Eclipse 3.4 with a new Equinox secure storage API.
+In Eclipse 4.2 the implementation of the old authorization methods was removed, but the API left in place.
+This old API will be removed completely in a future release. The following API methods will
+be removed from <tt>org.eclipse.core.runtime.Platform</tt>:
+</p>
+<ul>
+ <li><tt>addAuthorizationInfo(URL serverUrl, String realm, String authScheme, Map info)</tt></li>
+ <li><tt>getAuthorizationInfo(URL serverUrl, String realm, String authScheme)</tt></li>
+ <li><tt>flushAuthorizationInfo(URL serverUrl, String realm, String authScheme)</tt></li>
+ <li><tt>addProtectionSpace(URL resourceUrl, String realm)</tt></li>
+ <li><tt>getProtectionSpace(URL resourceUrl)</tt></li>
+ </ul>
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=476404" target="_blank">bug 476404</a>.
+</p>
+
+
+
+<!-- ############################################## -->
+<h2>API removals after June 2018</h2>
+
+<h3>2. <a name="fullscreen">org.eclipse.ui.cocoa.fullscreenWindow</a></h3>
+<p>
+Eclipse Platform 4.2 introduced a OS&nbsp;X-specific command to toggle full-screen
+called <code>org.eclipse.ui.cocoa.fullscreenWindow</code> (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=376394" target="_blank">bug 376394</a>),
+bound to Command-Ctrl-F.  In 4.6 we introduced a cross-platform command
+to toggle full-screen called <code>org.eclipse.ui.window.fullscreenmode</code>
+(<a href="https://bugs.eclipse.org/489087" target="_blank">bug 489087</a> and
+<a href="https://bugs.eclipse.org/491572" target="_blank">bug 491572</a>).  As a result,
+we have two "Toggle Full Screen" commands on OS&nbsp;X, and both
+appear in the <em>Quick Access</em>.  We will consolidate our code to
+use <code>org.eclipse.ui.window.fullscreenmode</code>, and plan to
+remove <code>org.eclipse.ui.cocoa.fullscreenWindow</code>.
+</p>
+<p>
+For further details or to provide feedback on this change, see
+<a href="https://bugs.eclipse.org/493932" target="_blank">bug 493932</a>.
+</p>
+
+
+
+<!-- ############################################## -->
+<h2>API removals after June 2020</h2>
+
+<h3>3. <a name="mpartdescriptor">Remove Dirtable flag from MPartDescriptor</a></h3>
+<p>
+The  <code>DirtableMInput</code> field will be removed from the <code>MPartDescriptor</code> class and related API.
+</p>
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=530887" target="_blank">bug 530887</a>.
+</p>
+
+
+<h3>5. <a name="ui-dialogs">Remove deprecated dialogs from org.eclipse.ui.dialogs</a></h3>
+<p>
+
+The following dialogs are planned to be removed from this package:
+
+
+<ul>
+ <li><tt>FileSelectionDialog</tt></li>
+ <li><tt>WizardImportPage</tt></li>
+ <li><tt>WizardExportPage</tt></li>
+</ul>
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=448275" target="_blank">bug 448275</a>.
+</p>
+
+<h3>7. <a name="jface-popupdialog">Remove deprecated method and constructor in PopupDialog</a></h3>
+
+The method <code>getPersistBounds()</code> is planned to be removed from class <code>org.eclipse.jface.dialogs.PopupDialog</code>.
+Clients are encouraged to use the method <code>getPersistLocation()</code> or <code>getPersistSize()</code> instead.
+
+It is also planned to remove the deprecated constructor. Clients should use the not deprecated constructor.
+
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=531913" target="_blank">bug 531913</a>.
+</p>
+
+
+<h2>API removals after March 2021</h2>
+
+<h3>1. <a name="commandsutil">org.eclipse.core.commands.util package</a></h3>
+
+The <code>org.eclipse.core.commands.util</code> package is planned to be removed. It contains one utility class for tracing code.
+
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=143992" target="_blank">bug 143992</a>.
+</p>
+
+<h3>2. <a name="encodingactiongroup">org.eclipse.ui.editors.text.EncodingActionGroup</a> and related interfaces</h3>
+
+The class <code>org.eclipse.ui.editors.text.EncodingActionGroup</code> and its related interfaces <code>org.eclipse.ui.editors.text.IEncodingActionsConstants</code>,
+<code>org.eclipse.ui.editors.text.IEncodingActionsDefinitionIds</code>, <code>org.eclipse.ui.editors.text.IEncodingActionsHelpContextIds</code>
+are planned to be removed. They have been deprecated with Eclipse 3.1.
+
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=544309" target="_blank">bug 544309</a>.
+</p>
+
+<h3>3. <a name="equinoxlauncher">org.eclipse.core.launcher#Main and WebStartMain</a> and related interfaces</h3>
+
+The classes <code>org.eclipse.core.launcher.Main</code>, <code>org.eclipse.equinox.launcher.WebStartMain</code> its related interfaces will be deleted.
+
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=544262" target="_blank">bug 544262</a>.
+</p>
+
+
+<h3>5. <a name="workbenchwindowconfigurer">Delete unsupported methods in WorkbenchWindowConfigurer</a></h3>
+
+The following methods are not used anymore by the platform and will be deleted.
+
+
+<ul>
+ <li><tt>createMenuBar</tt></li>
+ <li><tt>createCoolBarControl</tt></li>
+ <li><tt>createStatusLineControl</tt></li>
+ <li><tt>createPageComposite</tt></li>
+ <li><tt>setShowFastViewBars</tt></li>
+ <li><tt>getShowFastViewBars</tt></li>
+</ul>
+
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=485835" target="_blank">bug 485835</a>.
+</p>
+
+
+<!-- ############################################## -->
+<h2>API removals after June 2021</h2>
+
+<h3>1. <a name="commands">Delete deprecated contents of org.eclipse.ui.commands package</a></h3>
+
+The following deprecated contents of org.eclipse.ui.commands are not used anymore by the platform and will be deleted.
+
+<ul> <li>AbstractHandler</li>
+ <li>ActionHandler</li>
+ <li>CategoryEvent</li>
+ <li>CommandEvent</li>
+ <li>CommandException</li>
+ <li>CommandManagerEvent</li>
+ <li>ExecutionException</li>
+ <li>HandlerEvent</li>
+ <li>HandlerSubmission</li>
+ <li>ICategory</li>
+ <li>ICategoryListener</li>
+ <li>ICommand</li>
+ <li>ICommandListener</li>
+ <li>ICommandManager</li>
+ <li>ICommandManagerListener</li>
+ <li>IHandler</li>
+ <li>IHandlerListener</li>
+ <li>IKeyConfiguration</li>
+ <li>IKeyConfigurationListener</li>
+ <li>IKeySequenceBinding</li>
+ <li>IWorkbenchCommandSupport</li>
+ <li>KeyConfigurationEvent</li>
+ <li>NotDefinedException</li>
+ <li>NotHandledException</li>
+ <li>Priority</li>
+ <li>org.eclipse.ui.IWorkbench.getCommandSupport()</li>
+</ul>
+
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=431177" target="_blank">bug 431177</a>.
+</p>
+
+<!-- ############################################## -->
+<h2>API removals after September 2021</h2>
+
+<h3>1. <a name="navigator">Navigator view and related API</a></h3>
+
+Navigator view (ResourceNavigator impl) and related API is marked for deletion.
+
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=550379" target="_blank">bug 550379</a>.
+</p>
+
+<!-- ############################################## -->
+<h2>API removals after December 2021</h2>
+
+<h3>1. <a name="bookmark">BookmarkNavigator view and related API</a></h3>
+
+BookmarkNavigator view (ResourceNavigator impl) and related API is marked for deletion.
+
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=550439" target="_blank">bug 550439</a>.
+</p>
+
+
+
+<!-- ############################################## -->
+<h2>API removals after May 2022</h2>
+
+<h3>1. <a name="bookmark">Hover images from ISharedImages</a></h3>
+
+Multiple images not used since Eclipse 3.0 in the platform will be deleted.
+
+<ul>
+ <li>ISharedImages.IMG_TOOL_UNDO_HOVER</li>
+ <li>ISharedImages.IMG_TOOL_REDO_HOVER</li>
+ <li>ISharedImages.IMG_TOOL_CUT_HOVER</li>
+ <li>ISharedImages.IMG_TOOL_COPY_HOVER</li>
+ <li>ISharedImages.IMG_TOOL_PASTE_HOVER</li>
+ <li>ISharedImages.IMG_TOOL_FORWARD_HOVER</li>
+ <li>ISharedImages.IMG_TOOL_DELETE_HOVER</li>
+ <li>ISharedImages.IMG_TOOL_NEW_WIZARD_HOVER</li>
+ <li>ISharedImages.IMG_TOOL_BACK_HOVER</li>
+ <li>ISharedImages.IMG_TOOL_UP_HOVER</li>
+</ul>
+
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=559593" target="_blank">bug 559593</a>.
+</p>
+
+<h2>API removals after June 2022</h2>
+
+<h3>1. <a name="icu4j">ICU4J bundle from SDK</a></h3>
+
+Support and/or usage of ICU4J is being gradually removed from internals. Wherever ICU4J is exposed in API it's being deprecated and scheduled for removal after June 2022 release.
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=562582" target="_blank">bug 562582</a>.
+</p>
+
+<!-- ############################################## -->
+<h2>API removals after September 2022</h2>
+
+<h3>1. <a name="observablefactories">Observable factory classes</a></h3>
+
+The following databinding classes will be removed. They have been obsolete since the databinding framework was transitioned to work with property classes in 2014. They are replaced by corresponding property factory classes.
+
+See <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=546820">bug 546820</a>.
+
+<ul>
+ <li>org.eclipse.jface.databinding.viewers.ViewersObservables</li>
+ <li>org.eclipse.jface.databinding.swt.SWTObservables</li>
+ <li>org.eclipse.core.databinding.beans.BeansObservables</li>
+ <li>org.eclipse.core.databinding.beans.PojoObservables</li>
+ <li>org.eclipse.ui.databinding.WorkbenchObservables</li>
+</ul>
+
+<h3>2. <a name="propertyfactories">Untyped databinding property factory classes</a></h3>
+
+The following classes in the databinding bundles will be removed. They are replaced by typed factory classes with the same name, but in a sub-package that is called "typed".
+
+See <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=546822">bug 546822</a>.
+
+<ul>
+ <li>org.eclipse.ui.databinding.WorkbenchProperties</li>
+ <li>org.eclipse.core.databinding.beans.BeanProperties</li>
+ <li>org.eclipse.core.databinding.beans.PojoProperties</li>
+ <li>org.eclipse.jface.databinding.viewers.ViewerProperties</li>
+ <li>org.eclipse.jface.databinding.swt.WidgetProperties</li>
+</ul>
+
+<h3>3. <a name="pde.ui.launcher">Remove deprecated contents of org.eclipse.pde.ui.launcher package</a></h3>
+
+The following classes from <code>org.eclipse.pde.ui.launcher</code> have been deprecated since 2009 and are scheduled for removal after the September 2022 release.
+All classes have corresponding replacements in the <code>org.eclipse.pde.launching</code> bundle.
+<ul>
+  <li><code>org.eclipse.pde.ui.launcher.AbstractPDELaunchConfiguration</code></li>
+  <li><code>org.eclipse.pde.ui.launcher.EclipseApplicationLaunchConfiguration</code></li>
+  <li><code>org.eclipse.pde.ui.launcher.EquinoxLaunchConfiguration</code></li>
+  <li><code>org.eclipse.pde.ui.launcher.EquinoxPluginsTab</code></li>
+  <li><code>org.eclipse.pde.ui.launcher.EquinoxSettingsTab</code></li>
+  <li><code>org.eclipse.pde.ui.launcher.IPDELauncherConstants</code></li>
+  <li><code>org.eclipse.pde.ui.launcher.JUnitLaunchConfigurationDelegate</code></li>
+  <li><code>org.eclipse.pde.ui.launcher.OSGiLaunchConfigurationDelegate</code></li>
+  <li><code>org.eclipse.pde.ui.launcher.OSGiLaunchConfigurationInitializer</code></li>
+  <li><code>org.eclipse.pde.ui.launcher.PDESourcePathProvider</code></li>
+</ul>
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=564563" target="_blank">bug 564563</a>.
+</p>
+
+<h3>4. <a name="createPlatformConfiguration">Remove TargetPlatform::createPlatformConfiguration</a></h3>
+
+The method <code>org.eclipse.pde.core.plugin.TargetPlatform.createPlatformConfiguration(File, IPluginModelBase[], IPluginModelBase)</code> is scheduled for removal after the September 2022 release.
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=564763" target="_blank">bug 564763</a>.
+</p>
+
+<h3>5. <a name="IModelProviderEvent">Remove IModelProviderEvent's fields TARGET_CHANGED  and ENVIRONMENT_CHANGED </a></h3>
+
+The fields <code>org.eclipse.pde.core.IModelProviderEvent.TARGET_CHANGED</code> and <code>org.eclipse.pde.core.IModelProviderEvent.ENVIRONMENT_CHANGED</code> are scheduled for removal after the January 2022 release.
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=570549" target="_blank">bug 570549</a>.
+</p>
+		
+<!-- ############################################## -->
+<h2>API removals after March 2023</h2>
+
+<h3>1. <a name="MultiPageEditor">Remove MultiPageEditor and related API </a></h3>
+
+
+The class <code>org.eclipse.ui.part.MultiPageEditor</code> and related API were deprecated in 2002 and are planned for removal after the March 2023 release.
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=547018" target="_blank">bug 547018</a>.
+</p>
+
+<h3>2. <a name="pack200">Support for pack200 artifacts in p2 </a></h3>
+
+
+The pack200/unpack200 tools have been removed in Java 14 (March 2020) and underlying API are removed in Java 16 (March 2021). Equinox p2 guarded pack200 usage to be no-op when running on Java 14+ thus support for it is planned to be removed in the June 2023 release.
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=572043" target="_blank">bug 572043</a>.
+</p>
+
+<!-- ############################################## -->
+<h2>API removals after September 2023</h2>
+
+<h3>1. <a name="ClassicSearch">Remove Classic Search API </a></h3>
+
+
+The "Classic" Search View and related API were deprecated in Eclipse 3.0 and are planned for removal after the September 2023 release. It has been non functional and simply opening the modern "Search" view since Eclipse 3.0.
+<p>
+For further details or to provide feedback on this change, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=487303" target="_blank">bug 487303</a>.
+</p>
+
+
+
+</body>
+</html>

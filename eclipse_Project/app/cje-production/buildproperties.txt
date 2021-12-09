@@ -1,0 +1,64 @@
+#*******************************************************************************
+# Copyright (c) 2021 IBM Corporation and others.
+#
+# This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License 2.0
+# which accompanies this distribution, and is available at
+# https://www.eclipse.org/legal/epl-2.0/
+#
+# SPDX-License-Identifier: EPL-2.0
+#
+# Contributors:
+#     Sravan Lakkimsetti - initial API and implementation
+#*******************************************************************************
+
+# This file contains environmental properties as key value pairs. Lines starting
+# with # are considered comments and no spaces allowed in keys
+
+# CJE build variables
+BRANCH="master"
+PATCH_OR_BRANCH_LABEL="master"
+BUILD_TYPE_NAME="Integration"
+BUILD_TYPE="I"
+TESTED_BUILD_TYPE="I"
+RELEASE_VER="4.22"
+STREAM="4.22.0"
+STREAMMajor="4"
+STREAMMinor="22"
+STREAMService="0"
+GIT_ROOT="ssh://genie.releng@git.eclipse.org:29418"
+AGG_REPO="/platform/eclipse.platform.releng.aggregator.git"
+AGG_DIR="gitCache/eclipse.platform.releng.aggregator"
+DROP_DIR="siteDir/eclipse/downloads/drops4"
+UPDATES_DIR="siteDir/eclipse/updates"
+EQUINOX_DROP_DIR="siteDir/equinox/drops"
+TMP_DIR="tmp"
+DOWNLOAD_HOST="download.eclipse.org"
+BUILD_TO_COMPARE_SITE="ftp.osuosl.org/pub/eclipse/eclipse/updates"
+LOCAL_REPO="localMavenRepo"
+
+# Base builder parameters
+BASEBUILDER_TAG="4.21"
+API_PREV_REF_LABEL="4.21"
+#API_FREEZE_REF_LABEL="4.22RC1"
+API_FREEZE_REF_LABEL=""
+# Change to appropriate versions and uncomment when entering API freeze
+#FREEZE_PARAMS="-DfreezeBaseURL=https://${DOWNLOAD_HOST}/eclipse/downloads/drops4/S-${API_FREEZE_REF_LABEL}-202108251800/eclipse-SDK-${API_FREEZE_REF_LABEL}-win32-x86_64.zip -DfreezeName=Eclipse-SDK-${API_FREEZE_REF_LABEL} -DfreezeFilename=eclipse-SDK-${API_FREEZE_REF_LABEL}-win32-x86_64.zip"
+# Otherwise set to a blank space
+FREEZE_PARAMS=" "
+
+PREVIOUS_RELEASE_VER="4.21"
+PREVIOUS_RELEASE_REPO_ID="4.21"
+#build id for getting repo
+BASEBUILD_ID="R-4.21-202109060500"
+#release id for downloading eclipse
+PREVIOUS_RELEASE_ID="R-4.21-202109060500"
+
+BUILDTOOLS_REPO="https://download.eclipse.org/eclipse/updates/buildtools/"
+WEBTOOLS_REPO="https://download.eclipse.org/webtools/downloads/drops/R3.22.0/R-3.22.0-20210612170523/repositoryunittests/"
+BASEBUILDER_DIR="tmp/org.eclipse.releng.basebuilder"
+ECLIPSE_RUN_REPO="https://download.eclipse.org/eclipse/updates/4.22-I-builds/"
+
+#Maven parameters
+MAVEN_OPTS="-Xmx6G"
+JAVA_DOC_TOOL="-Declipse.javadoc=/opt/tools/java/openjdk/jdk-11/latest/bin/javadoc"

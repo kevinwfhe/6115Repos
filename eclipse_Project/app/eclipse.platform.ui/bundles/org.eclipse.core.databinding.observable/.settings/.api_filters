@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component id="org.eclipse.core.databinding.observable" version="2">
+    <resource path="src/org/eclipse/core/databinding/observable/AbstractObservable.java" type="org.eclipse.core.databinding.observable.AbstractObservable">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="IObservable"/>
+                <message_argument value="AbstractObservable"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/DecoratingObservable.java" type="org.eclipse.core.databinding.observable.DecoratingObservable">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="IDecoratingObservable"/>
+                <message_argument value="DecoratingObservable"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/DecoratingObservableCollection.java" type="org.eclipse.core.databinding.observable.DecoratingObservableCollection">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="IObservableCollection&lt;E&gt;"/>
+                <message_argument value="DecoratingObservableCollection&lt;E&gt;"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/IChangeListener.java" type="org.eclipse.core.databinding.observable.IChangeListener">
+        <filter comment="Authorised internal implementor." id="576782386">
+            <message_arguments>
+                <message_argument value="IObservablesListener"/>
+                <message_argument value="IChangeListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/IDisposeListener.java" type="org.eclipse.core.databinding.observable.IDisposeListener">
+        <filter comment="Authorised internal implementor." id="576782386">
+            <message_arguments>
+                <message_argument value="IObservablesListener"/>
+                <message_argument value="IDisposeListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/IStaleListener.java" type="org.eclipse.core.databinding.observable.IStaleListener">
+        <filter comment="Authorised internal implementor." id="576782386">
+            <message_arguments>
+                <message_argument value="IObservablesListener"/>
+                <message_argument value="IStaleListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/list/AbstractObservableList.java" type="org.eclipse.core.databinding.observable.list.AbstractObservableList">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="IObservableList&lt;E&gt;"/>
+                <message_argument value="AbstractObservableList&lt;E&gt;"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/list/DecoratingObservableList.java" type="org.eclipse.core.databinding.observable.list.DecoratingObservableList">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="IObservableList&lt;E&gt;"/>
+                <message_argument value="DecoratingObservableList&lt;E&gt;"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/list/ObservableList.java" type="org.eclipse.core.databinding.observable.list.ObservableList">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="IObservableList&lt;E&gt;"/>
+                <message_argument value="ObservableList&lt;E&gt;"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/map/AbstractObservableMap.java" type="org.eclipse.core.databinding.observable.map.AbstractObservableMap">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="IObservableMap&lt;K, V&gt;"/>
+                <message_argument value="AbstractObservableMap&lt;K, V&gt;"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/map/DecoratingObservableMap.java" type="org.eclipse.core.databinding.observable.map.DecoratingObservableMap">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="IObservableMap&lt;K, V&gt;"/>
+                <message_argument value="DecoratingObservableMap&lt;K, V&gt;"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/map/ObservableMap.java" type="org.eclipse.core.databinding.observable.map.ObservableMap">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="IObservableMap&lt;K, V&gt;"/>
+                <message_argument value="ObservableMap&lt;K, V&gt;"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/set/AbstractObservableSet.java" type="org.eclipse.core.databinding.observable.set.AbstractObservableSet">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="IObservableSet&lt;E&gt;"/>
+                <message_argument value="AbstractObservableSet&lt;E&gt;"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/set/DecoratingObservableSet.java" type="org.eclipse.core.databinding.observable.set.DecoratingObservableSet">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="IObservableSet&lt;E&gt;"/>
+                <message_argument value="DecoratingObservableSet&lt;E&gt;"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/set/ObservableSet.java" type="org.eclipse.core.databinding.observable.set.ObservableSet">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="IObservableSet&lt;E&gt;"/>
+                <message_argument value="ObservableSet&lt;E&gt;"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/sideeffect/CompositeSideEffect.java" type="org.eclipse.core.databinding.observable.sideeffect.CompositeSideEffect">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="ISideEffect"/>
+                <message_argument value="CompositeSideEffect"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/value/AbstractObservableValue.java" type="org.eclipse.core.databinding.observable.value.AbstractObservableValue">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="IObservableValue&lt;T&gt;"/>
+                <message_argument value="AbstractObservableValue&lt;T&gt;"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/value/AbstractVetoableValue.java" type="org.eclipse.core.databinding.observable.value.AbstractVetoableValue">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="IVetoableValue&lt;T&gt;"/>
+                <message_argument value="AbstractVetoableValue&lt;T&gt;"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/value/DecoratingObservableValue.java" type="org.eclipse.core.databinding.observable.value.DecoratingObservableValue">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="IObservableValue&lt;T&gt;"/>
+                <message_argument value="DecoratingObservableValue&lt;T&gt;"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/org/eclipse/core/databinding/observable/value/DecoratingVetoableValue.java" type="org.eclipse.core.databinding.observable.value.DecoratingVetoableValue">
+        <filter comment="Authorised internal implementor." id="576725006">
+            <message_arguments>
+                <message_argument value="IVetoableValue&lt;T&gt;"/>
+                <message_argument value="DecoratingVetoableValue&lt;T&gt;"/>
+            </message_arguments>
+        </filter>
+    </resource>
+</component>
