@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+     <extension
+         id="testDynamicStatusHandlerAddition"
+         point="org.eclipse.ui.statusHandlers">
+      <statusHandler
+            class="org.eclipse.ui.dynamic.DynamicStatusHandler"
+            id="org.eclipse.newStatusHandler1.newStatusHandler1">
+      </statusHandler>
+      <statusHandlerProductBinding
+            handlerId="org.eclipse.newStatusHandler1.newStatusHandler1"
+            productId="org.eclipse.sdk.ide">
+      </statusHandlerProductBinding>
+      <statusHandler
+            class="org.eclipse.ui.dynamic.DynamicStatusHandler"
+            id="org.eclipse.newStatusHandler1.newStatusHandler2">
+      </statusHandler>
+   </extension>
+</plugin>

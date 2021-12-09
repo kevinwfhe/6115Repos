@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+     <extension
+         id="testDynamicPreferencePageAddition"
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="org.eclipse.ui.dynamic.DynamicPreferencePage"
+            name="dynamic.parentPage"
+            id="dynamic.parentPage"/>
+      <page
+            class="org.eclipse.ui.dynamic.DynamicPreferencePage"
+            category="dynamic.parentPage"
+            name="dynamic.childPage"
+            id="dynamic.childPage"/>
+   </extension>
+
+
+
+</plugin>

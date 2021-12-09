@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+     <extension
+         id="testDynamicKeywordAddition"
+         point="org.eclipse.ui.keywords">
+      <keyword
+            label="dynamicKeyword1"
+            id="dynamicKeyword1"/>
+   </extension>
+ 
+
+</plugin>

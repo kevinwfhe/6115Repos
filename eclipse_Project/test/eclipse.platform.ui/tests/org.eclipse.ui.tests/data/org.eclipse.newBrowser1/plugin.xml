@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+     <extension
+         id="testDynamicBrowserAddition"
+         point="org.eclipse.ui.browserSupport">
+      <support
+            class="org.eclipse.ui.dynamic.DynamicBrowserSupport"
+            default="true"/>
+   </extension>
+ 
+
+</plugin>

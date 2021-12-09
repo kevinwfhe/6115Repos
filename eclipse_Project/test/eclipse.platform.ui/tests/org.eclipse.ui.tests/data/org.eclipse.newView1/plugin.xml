@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+     <extension
+         point="org.eclipse.ui.views" id="testDynamicViewAddition">
+      <view
+            class="org.eclipse.ui.dynamic.DynamicView"
+            icon="anything.gif"
+            category="org.eclipse.newView1.newCategory1"
+            name="NewView1"
+            id="org.eclipse.newView1.newView1">
+     </view>
+      <category
+            name="NewCategory1"
+            id="org.eclipse.newView1.newCategory1"/>
+      <stickyView
+            closeable="false"
+            moveable="false"
+            location="BOTTOM"
+            id="org.eclipse.newView1.newView1"/>
+            
+            
+     <view
+            class="org.eclipse.ui.dynamic.DynamicView"
+            icon="anything.gif"
+            name="NewView2"
+            id="org.eclipse.newView1.newView2">
+     </view>
+   </extension>
+</plugin>

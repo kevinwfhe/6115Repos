@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   
+    <extension
+         id="testNewActivitySupportAddition"
+         point="org.eclipse.ui.activitySupport">
+      <categoryImageBinding
+            icon="anything.gif"
+            id="org.eclipse.category2"/>
+      <activityImageBinding
+            icon="anything.gif"
+            id="org.eclipse.activity2"/>
+   </extension>
+ 
+
+</plugin>
